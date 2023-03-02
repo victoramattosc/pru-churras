@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +8,23 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
+  cara = 'assets/cara.png';
+  coroa = 'assets/coroa.png';
+  logo = 'assets/logo.png';
+  image = this.logo;
+  info = 'Clique no botão para jogar!';
+
   constructor() {}
+
+  jogarMoeda(){
+    if(Math.random() < 0.5 ){
+      this.image = this.cara;
+      this.info = "Cara!"
+    }
+    else{
+      this.image = this.coroa;
+      this.info = "Coroa!"
+    }
+  }
 
 }
