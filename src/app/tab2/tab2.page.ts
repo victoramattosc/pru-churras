@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -13,8 +14,9 @@ export class Tab2Page {
   pont2= 0;
   part2= 0;
 
-  constructor() {}
+  constructor(private alertController: AlertController) {}
 
+  // Botões
 
   botaoTruco1(){
     this.valendo = 1;
@@ -36,20 +38,17 @@ export class Tab2Page {
     this.valendo = 12;
   }
 
+  // Mais
+
   botaoMais1(){
     this.pont1 = this.pont1 + this.valendo;
     if(this.pont1 >= 12){
       this.part1 += 1;
       this.pont1 = 0
+      this.pont2 = 0
+      this.presentAlert1();
     }
     this.valendo = 1;
-  }
-
-  botaoMenos1(){
-    this.pont1 = this.pont1 - this.valendo;
-    if(this.pont1 < 0){
-      this.pont1 = 0
-    }
   }
 
   botaoMais2(){
@@ -57,8 +56,19 @@ export class Tab2Page {
     if(this.pont2 >= 12){
       this.part2 += 1;
       this.pont2 = 0
+      this.pont1 = 0
+      this.presentAlert2();
     }
     this.valendo = 1;
+  }
+
+  // Menos
+
+  botaoMenos1(){
+    this.pont1 = this.pont1 - this.valendo;
+    if(this.pont1 < 0){
+      this.pont1 = 0
+    }
   }
 
   botaoMenos2(){
@@ -68,12 +78,38 @@ export class Tab2Page {
     }
   }
 
+  // Limpar
+
   limpar(){
     this.pont1 = 0;
     this.part1 = 0;
     this.pont2 = 0;
     this.part2 = 0;
+    this.valendo = 1;
   }
+
+  // Notificações
+
+  async presentAlert1() {
+    const alert = await this.alertController.create({
+      header: 'Parabéns',
+      message: 'Time 1 Venceu!',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+  }
+
+  async presentAlert2() {
+    const alert = await this.alertController.create({
+      header: 'Parabéns',
+      message: 'Time 2 Venceu!',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+  }
+
 
 
 }

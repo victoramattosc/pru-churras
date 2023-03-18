@@ -1,0 +1,34 @@
+*{
+  font-family: 'Merriweather', serif;
+}
+
+.background{
+  --background: url(https://http2.mlstatic.com/D_NQ_NP_678872-MLB43508857884_092020-O.jpg) 0 0/100% 100% no-repeat;
+}
+
+ion-card{
+  padding: 10px;
+  box-shadow: 0.5px 0.8px 5px #B22222;
+}
+
+.maior{
+  font-size: 70px;
+}
+
+.btn{
+  cursor: pointer;
+  --background: #B22222;
+  --color: white;
+}
+
+ion-button{
+  --background: #B22222;
+  --color: white;
+}
+
+.bonito{
+  color: white;
+  text-shadow: 5px 5px 5px black;
+}
+
+
