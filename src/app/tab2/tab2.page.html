@@ -34,7 +34,7 @@ Valendo: {{valendo}}
     <ion-col><ion-button (click)="botaoMais1()">+</ion-button></ion-col>
     <ion-col><ion-button (click)="botaoMais2()">+</ion-button></ion-col>
   </ion-row>
-  <ion-row class="maior bonito">
+  <ion-row class="pont bonito">
     <ion-col>{{pont1}}</ion-col>
     <ion-col>{{pont2}}</ion-col>
   </ion-row>
@@ -44,11 +44,13 @@ Valendo: {{valendo}}
   </ion-row>
 </ion-grid>
 
-<ion-grid class="ion-text-center bonito">
+<ion-grid class="ion-text-center bonito part">
   Partidas
   <ion-row>
-    <ion-col>Time 1: </ion-col>
-    <ion-col>Time 2: </ion-col>
+    <ion-col>
+      <ion-input value="Time 1"></ion-input>
+</ion-col>
+      <ion-input value="Time 2"></ion-input>
   </ion-row>
   <ion-row>
     <ion-col>{{part1}}</ion-col>
