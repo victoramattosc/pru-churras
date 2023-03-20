@@ -1,3 +1,16 @@
+*{
+  font-family: 'Merriweather', serif;
+}
+
+.barra{
+  --background: #141414;
+  --color: white;
+}
+
+.background{
+  --background: url(https://mh-2-agencia-estoque.panthermedia.net/media/media_detail/0014000000/14776000/~fundo-de-parede-velha-de-madeira_14776413_detail.jpg) 0 0/100% 100% no-repeat;
+}
+
 .container-coin{
   display: flex;
   align-items: center;
@@ -10,9 +23,16 @@
 img{
   height: 50%;
   border-radius: 50%;
-  box-shadow: 0.5px 0.8px 15px #ffe140;
+  box-shadow: 0.5px 0.8px 15px black;
+}
+
+.bonito{
+  color: white;
+  text-shadow: 5px 5px 5px black;
 }
 
 .btn{
   cursor: pointer;
+  --background: #ffe140;
+  --color: black;
 }

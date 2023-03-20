@@ -1,22 +1,27 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="dark">
+  <ion-toolbar class="ion-text-center barra">
     <ion-title>
       Cara ou Coroa
     </ion-title>
   </ion-toolbar>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="background">
 
   <div class="container-coin">
     <img [@rotateState]="state" [src]="image" alt="" class="icon">
-    <h1>{{info}}</h1>
+    <h1 class="ion-text-center bonito">{{info}}</h1>
   </div>
 
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar (click)="jogarMoeda()" class="btn" color="dark">
+  <ion-toolbar (click)="jogarMoeda()" class="btn">
     <ion-title class="ion-text-center">Jogar a Moeda!</ion-title>
   </ion-toolbar>
 </ion-footer>

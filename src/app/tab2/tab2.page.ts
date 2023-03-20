@@ -69,6 +69,7 @@ export class Tab2Page {
     if(this.pont1 < 0){
       this.pont1 = 0
     }
+    this.valendo = 1;
   }
 
   botaoMenos2(){
@@ -76,6 +77,7 @@ export class Tab2Page {
     if(this.pont2 < 0){
       this.pont2 = 0
     }
+    this.valendo = 1;
   }
 
   // Limpar
