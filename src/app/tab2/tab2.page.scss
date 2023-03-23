@@ -24,11 +24,18 @@ ion-card{
   cursor: pointer;
   --background: #B22222;
   --color: white;
+
+  :hover{
+    background-color: #9b1e1e;
+  }
+
+
 }
 
 ion-button{
   --background: #B22222;
   --color: white;
+  --background-hover: #9b1e1e;
 }
 
 .bonito{

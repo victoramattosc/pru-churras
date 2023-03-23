@@ -13,55 +13,73 @@
 
 <ion-content [fullscreen]="true" class="background">
 
-<ion-card class="ion-text-center">
-  <ion-card-title>
-Valendo: {{valendo}}
-</ion-card-title>
-</ion-card>
+  <ion-card class="ion-text-center">
+    <ion-card-title>
+      Valendo: {{valendo}}
+    </ion-card-title>
+  </ion-card>
 
-<ion-grid >
-  <ion-row class="botaoTruco ion-text-center">
-    <ion-col>  <ion-button (click)="botaoTruco1()">1</ion-button> </ion-col>
-    <ion-col>  <ion-button (click)="botaoTruco3()">3</ion-button></ion-col>
-    <ion-col>  <ion-button (click)="botaoTruco6()">6</ion-button></ion-col>
-    <ion-col>  <ion-button (click)="botaoTruco9()">9</ion-button></ion-col>
-    <ion-col>  <ion-button (click)="botaoTruco12()">12</ion-button></ion-col>
-  </ion-row>
-</ion-grid>
+  <ion-grid>
+    <ion-row class="botaoTruco ion-text-center">
+      <ion-col>
+        <ion-button (click)="botaoTruco(1)">1</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="botaoTruco(3)">3</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="botaoTruco(6)">6</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="botaoTruco(9)">9</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="botaoTruco(12)">12</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-<ion-grid class="ion-text-center">
-  <ion-row class="botaoMais">
-    <ion-col><ion-button (click)="botaoMais1()">+</ion-button></ion-col>
-    <ion-col><ion-button (click)="botaoMais2()">+</ion-button></ion-col>
-  </ion-row>
-  <ion-row class="pont bonito">
-    <ion-col>{{pont1}}</ion-col>
-    <ion-col>{{pont2}}</ion-col>
-  </ion-row>
-  <ion-row class="botaoMen">
-    <ion-col><ion-button (click)="botaoMenos1()">-</ion-button></ion-col>
-    <ion-col><ion-button (click)="botaoMenos2()">-</ion-button></ion-col>
-  </ion-row>
-</ion-grid>
+  <ion-grid class="ion-text-center">
+    <ion-row class="botaoMais">
+      <ion-col>
+        <ion-button (click)="botaoMais1()">+</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="botaoMais2()">+</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="pont bonito">
+      <ion-col>{{pont1}}</ion-col>
+      <ion-col>{{pont2}}</ion-col>
+    </ion-row>
+    <ion-row class="botaoMen">
+      <ion-col>
+        <ion-button (click)="botaoMenos1()">-</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="botaoMenos2()">-</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-<ion-grid class="ion-text-center bonito part">
-  Partidas
-  <ion-row>
-    <ion-col>
-      <ion-input value="Time 1"></ion-input>
-</ion-col>
-      <ion-input value="Time 2"></ion-input>
-  </ion-row>
-  <ion-row>
-    <ion-col>{{part1}}</ion-col>
-    <ion-col>{{part2}}</ion-col>
-  </ion-row>
-</ion-grid>
+  <ion-grid class="ion-text-center bonito part">
+    Partidas
+    <ion-row>
+      <ion-col>
+        <ion-input [(ngModel)]="time1"></ion-input>
+      </ion-col>
+      <ion-input [(ngModel)]="time2"></ion-input>
+    </ion-row>
+    <ion-row>
+      <ion-col>{{part1}}</ion-col>
+      <ion-col>{{part2}}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
 
 <ion-footer>
   <ion-toolbar (click)="limpar()" class="btn">
     <ion-title class="ion-text-center">Limpar</ion-title>
   </ion-toolbar>
 </ion-footer>
-
-</ion-content>

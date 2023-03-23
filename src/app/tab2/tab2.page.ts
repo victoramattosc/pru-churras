@@ -13,29 +13,16 @@ export class Tab2Page {
   part1= 0;
   pont2= 0;
   part2= 0;
+  time1 = "Time 1";
+  time2 = "Time 2";
 
   constructor(private alertController: AlertController) {}
 
   // Botões
 
-  botaoTruco1(){
-    this.valendo = 1;
-  }
-
-  botaoTruco3(){
-    this.valendo = 3;
-  }
-
-  botaoTruco6(){
-    this.valendo = 6;
-  }
-
-  botaoTruco9(){
-    this.valendo = 9;
-  }
-
-  botaoTruco12(){
-    this.valendo = 12;
+  botaoTruco(truco : number){
+    this.valendo = truco;
+    console.log(this.time1);
   }
 
   // Mais
@@ -95,7 +82,7 @@ export class Tab2Page {
   async presentAlert1() {
     const alert = await this.alertController.create({
       header: 'Parabéns',
-      message: 'Time 1 Venceu!',
+      message: `${this.time1} Venceu!` ,
       buttons: ['OK'],
     });
 
@@ -105,7 +92,7 @@ export class Tab2Page {
   async presentAlert2() {
     const alert = await this.alertController.create({
       header: 'Parabéns',
-      message: 'Time 2 Venceu!',
+      message: `${this.time2} Venceu!`,
       buttons: ['OK'],
     });
 
