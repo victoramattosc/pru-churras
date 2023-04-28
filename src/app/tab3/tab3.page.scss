@@ -1,0 +1,34 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+}
+
+ion-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 100vw;
+  margin-bottom: 20px;
+  ion-item {
+    border-radius: 5rem;
+    border-style: none;
+  }
+}
+
+.card{
+  padding: 15px;
+}
+
+ion-card{
+  display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    height: 5.6rem;
+    margin-bottom: 15px;
+}
+
+ion-avatar{
+  filter: brightness(0) invert(1);
+}

@@ -8,4 +8,80 @@
 
 <ion-content [fullscreen]="true">
 
+    <ion-card>
+      <ion-avatar>
+        <img src="https://static.thenounproject.com/png/2453696-200.png">
+      </ion-avatar>
+      <ion-label>D4</ion-label>
+    <ion-button (click)="botaoJogar(4)"><ion-icon name="dice-outline"></ion-icon>Lançar D4</ion-button>
+    </ion-card>
+
+    <ion-card>
+      <ion-avatar>
+        <img src="https://static.thenounproject.com/png/2453695-200.png">
+      </ion-avatar>
+      <ion-label>D6</ion-label>
+      <ion-button (click)="botaoJogar(6)"><ion-icon name="dice-outline"></ion-icon>Lançar D6</ion-button>
+      </ion-card>
+
+      <ion-card>
+        <ion-avatar>
+          <img src="https://static.thenounproject.com/png/2453699-200.png">
+        </ion-avatar>
+        <ion-label>D8</ion-label>
+      <ion-button (click)="botaoJogar(8)"><ion-icon name="dice-outline"></ion-icon>Lançar D8</ion-button>
+      </ion-card>
+
+      <ion-card>
+        <ion-avatar>
+          <img src="https://static.thenounproject.com/png/2453698-200.png">
+        </ion-avatar>
+        <ion-label>
+          D10
+        </ion-label>
+      <ion-button (click)="botaoJogar(10)"><ion-icon name="dice-outline"></ion-icon>Lançar D10</ion-button>
+      </ion-card>
+
+      <ion-card>
+        <ion-avatar>
+          <img src="https://static.thenounproject.com/png/2453697-200.png">
+        </ion-avatar>
+        <ion-label>D12</ion-label>
+      <ion-button (click)="botaoJogar(12)"><ion-icon name="dice-outline"></ion-icon>Lançar D12</ion-button>
+      </ion-card>
+
+      <ion-card>
+        <ion-avatar>
+          <img src="https://static.thenounproject.com/png/2453700-200.png">
+        </ion-avatar>
+        <ion-label>D20</ion-label>
+      <ion-button (click)="botaoJogar(20)"><ion-icon name="dice-outline"></ion-icon>Lançar D20</ion-button>
+      </ion-card>
+
+      <ion-card>
+        <ion-avatar>
+          <img src="https://rollthedice.online/assets/images/dice/1x1/d100_dice_1x1.png">
+        </ion-avatar>
+        <ion-label>D100</ion-label>
+      <ion-button (click)="botaoJogar(100)"><ion-icon name="dice-outline"></ion-icon>Lançar D100</ion-button>
+      </ion-card>
+
+      <ion-card class="ion-text-center card">{{qtde}}d{{dado}} = {{resultado}} + {{adicional}} = {{resultadoFinal}}</ion-card>
+
+     <div class="footer">
+      <ion-row>
+        <ion-item>
+          <ion-button fill="outline" slot="start" shape="round" (click)="addValor()">+</ion-button>
+          <ion-label>+{{adicional}}</ion-label>
+          <ion-button fill="outline" slot="end" shape="round" (click)="remValor()">-</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-button fill="outline" slot="start" shape="round" (click)="addDado()">+</ion-button>
+          <ion-label>{{qtde}}d</ion-label>
+          <ion-button fill="outline" slot="end" shape="round" (click)="remDado()">-</ion-button>
+        </ion-item>
+      </ion-row>
+    </div>
+
+
 </ion-content>
