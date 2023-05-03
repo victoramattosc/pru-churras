@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ToastController } from '@ionic/angular';
+import { generate, repeat } from 'rxjs';
 
 @Component({
   selector: 'app-tab3',
@@ -9,24 +11,36 @@ export class Tab3Page {
 
   dado = 0
   resultado = 0
-  resultadoFinal = 0
+  total = 0
   qtde = 1
   adicional = 0
 
-  constructor() {}
+
+  constructor(public toastController: ToastController) {}
+
+
+  async showNotification(generatedText: string) {
+    const toast = await this.toastController.create({
+      icon: 'Dice',
+      message: generatedText,
+      duration: 5000
+    });
+    toast.present();
+  }
 
   botaoJogar(jogar : number){
+    let generatedText = `${this.qtde}d${this.dado} = `;
+
+    for(let i = 0; i < this.qtde; i++){
     this.dado = jogar
     this.resultado = (Math.floor(Math.random() * this.dado + 1))
-
-    if (this.adicional >= 1){
-    this.resultadoFinal = this.resultado + this.adicional
-    }
-    else{
-      this.resultadoFinal = this.resultado
-    }
-
+    this.total = this.resultado + this.adicional
+    generatedText = generatedText + `${this.resultado}${this.qtde === 1 ? '' : (i === this.qtde - 1 ? '' : ' ; ')}`;
+}
+generatedText = generatedText + ` + ${this.adicional} = ${this.total}`;
+  return this.showNotification(generatedText);
   }
+
 
 
 
