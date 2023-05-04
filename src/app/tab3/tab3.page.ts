@@ -29,7 +29,7 @@ export class Tab3Page {
   }
 
   botaoJogar(jogar : number){
-    let generatedText = `${this.qtde}d${this.dado} = `;
+    let generatedText = `${this.qtde}d${this.jogar} = `;
 
     for(let i = 0; i < this.qtde; i++){
     this.dado = jogar
