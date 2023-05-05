@@ -35,8 +35,8 @@ export class Tab3Page {
 
   botaoJogar(jogar : number, tipo : string){
     let generatedText = `${this.qtde}d${jogar} = `;
-     if (tipo == 'somar'){}
-    /*let total = 0
+     if (tipo == 'somar'){
+    let total = 0
     for(let i = 0; i < this.qtde; i++){
     this.dado = jogar
     const resultado = (Math.floor(Math.random() * this.dado + 1)) + this.adicional
@@ -45,10 +45,8 @@ export class Tab3Page {
     }
     generatedText = generatedText + ` + ${this.adicional} = ${total}`;
     return this.showNotification(generatedText);
-
-}
-}*/
-  let maiorNum
+     } if(tipo = 'maior'){
+      let maiorNum
  for(let i = 0; i < this.qtde; i++){
   this.dado = jogar
   this.resultado = (Math.floor(Math.random() * this.dado + 1))
@@ -62,6 +60,10 @@ export class Tab3Page {
     maiorNum = this.resultado
 }
 }
+     }
+}   
+
+ 
 }
 
 /* for(let i = 0; i < this.qtde; i++){
