@@ -13,6 +13,16 @@
 
 <ion-content [fullscreen]="true" class="background">
 
+  <ion-list>
+    <ion-item>
+      <ion-select aria-label="Tipos" interface="popover" placeholder="Selecionar Modo">
+        <ion-select-option >Somar</ion-select-option>
+        <ion-select-option >Maior</ion-select-option>
+        <ion-select-option >Menor</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
     <ion-card>
       <ion-avatar>
         <img src="https://static.thenounproject.com/png/2453696-200.png">
@@ -71,7 +81,7 @@
       <ion-button (click)="botaoJogar(100)"><ion-icon name="dice-outline"></ion-icon>Lançar D100</ion-button>
       </ion-card>
 
-      <ion-card class="ion-text-center card">{{qtde}}d{{dado}} = {{resultado}} + {{adicional}} = {{total}}</ion-card>
+
 
      <div class="footer">
       <ion-row>

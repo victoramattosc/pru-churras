@@ -28,19 +28,45 @@ export class Tab3Page {
     toast.present();
   }
 
-  botaoJogar(jogar : number){
-    let generatedText = `${this.qtde}d${this.jogar} = `;
+  setMode(tipo : String){
 
-    for(let i = 0; i < this.qtde; i++){
-    this.dado = jogar
-    this.resultado = (Math.floor(Math.random() * this.dado + 1))
-    this.total = this.resultado + this.adicional
-    generatedText = generatedText + `${this.resultado}${this.qtde === 1 ? '' : (i === this.qtde - 1 ? '' : ' ; ')}`;
-}
-generatedText = generatedText + ` + ${this.adicional} = ${this.total}`;
-  return this.showNotification(generatedText);
   }
 
+
+  botaoJogar(jogar : number){
+    let generatedText = `${this.qtde}d${jogar} = `;
+
+    /*let total = 0
+    for(let i = 0; i < this.qtde; i++){
+    this.dado = jogar
+    const resultado = (Math.floor(Math.random() * this.dado + 1)) + this.adicional
+    total += resultado
+    generatedText = generatedText + `${resultado}${this.qtde === 1 ? '' : (i === this.qtde - 1 ? '' : ' + ')}`;
+    }
+    generatedText = generatedText + ` + ${this.adicional} = ${total}`;
+    return this.showNotification(generatedText);
+
+}
+}*/
+ for(let i = 0; i < this.qtde; i++){
+  this.dado = jogar
+  this.resultado = (Math.floor(Math.random() * this.dado + 1))
+  this.total = this.resultado + this.adicional
+  //Math.max(this.resultado) + this.adicional
+  generatedText = generatedText + `${this.resultado}${this.qtde === 1 ? '' : (i === this.qtde - 1 ? '' : ' ; ')}`;
+}
+
+/* for(let i = 0; i < this.qtde; i++){
+  this.dado = jogar
+  this.resultado = (Math.floor(Math.random() * this.dado + 1))
+  this.total = Math.min(this.resultado) + this.adicional
+  generatedText = generatedText + `${this.resultado}${this.qtde === 1 ? '' : (i === this.qtde - 1 ? '' : ' ; ')}`;
+}
+*/
+generatedText = generatedText + ` + ${this.adicional} = ${this.total}`;
+  return this.showNotification(generatedText);
+
+}
 
 
 

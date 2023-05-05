@@ -29,8 +29,6 @@ ion-row {
   }
 }
 
-.card{
-}
 
 ion-card{
   display: flex;
@@ -39,4 +37,13 @@ ion-card{
     flex-direction: row;
     height: 5.6rem;
     margin-bottom: 15px;
+}
+
+ion-card ion-button{
+  --background: #5b53e2;
+}
+
+.footer ion-button{
+  --color: #5b53e2;
+  --border-color: #5b53e2
 }
