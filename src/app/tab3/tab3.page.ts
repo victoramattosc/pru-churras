@@ -14,92 +14,107 @@ export class Tab3Page {
   total = 0
   qtde = 1
   adicional = 0
+  tipo = 'somar';
+  jogar = 0
+  generatedText = ''
 
+  constructor(public toastController: ToastController) { }
 
-  constructor(public toastController: ToastController) {}
-
-
-  async showNotification(generatedText: string) {
+  async showNotification() {
     const toast = await this.toastController.create({
       icon: 'Dice',
-      message: generatedText,
+      message: this.generatedText,
       duration: 5000
     });
     toast.present();
   }
 
-  setMode(tipo : String){
-
+  mudarTipo(tipo: any) {
+    this.tipo = tipo.target.ariaLabel.toLowerCase();
   }
 
-
-  botaoJogar(jogar : number, tipo : string){
-    let generatedText = `${this.qtde}d${jogar} = `;
-     if (tipo == 'somar'){
+  somarTipo() {
     let total = 0
-    for(let i = 0; i < this.qtde; i++){
-    this.dado = jogar
-    const resultado = (Math.floor(Math.random() * this.dado + 1)) + this.adicional
-    total += resultado
-    generatedText = generatedText + `${resultado}${this.qtde === 1 ? '' : (i === this.qtde - 1 ? '' : ' + ')}`;
+    for (let i = 0; i < this.qtde; i++) {
+      this.dado = this.jogar
+      const resultado = (Math.floor(Math.random() * this.dado + 1)) + this.adicional
+      total += resultado
+      this.generatedText = this.generatedText + `${resultado}${this.qtde === 1 ? '' : (i === this.qtde - 1 ? '' : ' + ')}`;
     }
-    generatedText = generatedText + ` + ${this.adicional} = ${total}`;
-    return this.showNotification(generatedText);
-     } if(tipo = 'maior'){
-      let maiorNum
- for(let i = 0; i < this.qtde; i++){
-  this.dado = jogar
-  this.resultado = (Math.floor(Math.random() * this.dado + 1))
-  this.total = this.resultado + this.adicional
-  //Math.max(this.resultado) + this.adicional
-  generatedText = generatedText + `${this.resultado}${this.qtde === 1 ? '' : (i === this.qtde - 1 ? '' : ' ; ')}`;
-  if(!maiorNum){
-    maiorNum = this.resultado
-} else{
-    if(this.resultado > maiorNum){
-    maiorNum = this.resultado
-}
-}
-     }
-}   
+    this.generatedText = this.generatedText + ` + ${this.adicional} = ${total}`;
+    this.showNotification();
+  }
 
- 
-}
+  maiorTipo() {
+    let maiorNum!: number
+    for (let i = 0; i < this.qtde; i++) {
+      this.dado = this.jogar
+      this.resultado = (Math.floor(Math.random() * this.dado + 1))
+      this.generatedText = this.generatedText + `${this.resultado}${this.qtde === 1 ? '' : (i === this.qtde - 1 ? '' : ' ; ')}`;
+      if (!maiorNum) {
+        maiorNum = this.resultado
+      } else {
+        if (this.resultado > maiorNum) {
+          maiorNum = this.resultado
+        }
+      }
+    }
+    this.total = maiorNum + this.adicional
+    this.generatedText = this.generatedText + ` + ${this.adicional} = ${this.total}`;
+    this.showNotification();
+  }
 
-/* for(let i = 0; i < this.qtde; i++){
-  this.dado = jogar
-  this.resultado = (Math.floor(Math.random() * this.dado + 1))
-  this.total = Math.min(this.resultado) + this.adicional
-  generatedText = generatedText + `${this.resultado}${this.qtde === 1 ? '' : (i === this.qtde - 1 ? '' : ' ; ')}`;
-}
-*/
-generatedText = generatedText + ` + ${this.adicional} = ${this.total}`;
-  return this.showNotification(generatedText);
+  menorTipo() {
+    let menorNum! : number;
+    for (let i = 0; i < this.qtde; i++) {
+      this.dado = this.jogar
+      this.resultado = (Math.floor(Math.random() * this.dado + 1))
+      this.generatedText = this.generatedText + `${this.resultado}${this.qtde === 1 ? '' : (i === this.qtde - 1 ? '' : ' ; ')}`;
+      if (!menorNum) {
+        menorNum = this.resultado
+      }
+      else {
+        if (this.resultado < menorNum) {
+          menorNum = this.resultado
+        }
+      }
+    }
+    this.total = menorNum + this.adicional
+    this.generatedText = this.generatedText + ` + ${this.adicional} = ${this.total}`;
+    this.showNotification();
+  }
 
-}
+  botaoJogar(jogar: number): void {
+    this.generatedText = `${this.qtde}d${jogar} = `;
+    this.jogar = jogar;
+    if (this.tipo == 'somar') {
+      this.somarTipo();
+    } else if (this.tipo == 'maior') {
+      this.maiorTipo();
+    } else if (this.tipo == 'menor') {
+      this.menorTipo();
+    }
+  }
 
-
-
-  addValor(){
+  addValor() {
     this.adicional += 1
   }
 
-  remValor(){
+  remValor() {
     this.adicional -= 1
-    if (this.adicional < 0){
+    if (this.adicional < 0) {
       this.adicional = 0
     }
   }
 
-  addDado(){
+  addDado() {
     this.qtde += 1
   }
 
-  remDado(){
+  remDado() {
     this.qtde -= 1
-    if (this.qtde <= 0){
+    if (this.qtde <= 0) {
       this.qtde = 1
     }
   }
-
 }
