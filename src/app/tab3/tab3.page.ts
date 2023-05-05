@@ -33,9 +33,9 @@ export class Tab3Page {
   }
 
 
-  botaoJogar(jogar : number){
+  botaoJogar(jogar : number, tipo : string){
     let generatedText = `${this.qtde}d${jogar} = `;
-
+     if (tipo == 'somar'){}
     /*let total = 0
     for(let i = 0; i < this.qtde; i++){
     this.dado = jogar
@@ -48,12 +48,20 @@ export class Tab3Page {
 
 }
 }*/
+  let maiorNum
  for(let i = 0; i < this.qtde; i++){
   this.dado = jogar
   this.resultado = (Math.floor(Math.random() * this.dado + 1))
   this.total = this.resultado + this.adicional
   //Math.max(this.resultado) + this.adicional
   generatedText = generatedText + `${this.resultado}${this.qtde === 1 ? '' : (i === this.qtde - 1 ? '' : ' ; ')}`;
+  if(!maiorNum){
+    maiorNum = this.resultado
+} else{
+    if(this.resultado > maiorNum){
+    maiorNum = this.resultado
+}
+}
 }
 
 /* for(let i = 0; i < this.qtde; i++){
