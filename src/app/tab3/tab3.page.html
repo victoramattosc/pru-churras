@@ -16,9 +16,9 @@
   <ion-list>
     <ion-item>
       <ion-select aria-label="Tipos" interface="popover" placeholder="Selecionar Modo">
-        <ion-select-option >Somar</ion-select-option>
-        <ion-select-option >Maior</ion-select-option>
-        <ion-select-option >Menor</ion-select-option>
+        <ion-select-option (click)="botaoJogar(somar)">Somar</ion-select-option>
+        <ion-select-option (click)="botaoJogar(maior)>Maior</ion-select-option>
+        <ion-select-option (click)="botaoJogar(menor)>Menor</ion-select-option>
       </ion-select>
     </ion-item>
   </ion-list>
